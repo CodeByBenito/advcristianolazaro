@@ -23,8 +23,8 @@ export default function About() {
           >
             <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://picsum.photos/seed/office/800/1066" 
-                alt="Escritório de Advocacia" 
+                src="https://i.ibb.co/CKLf7ypP/Whats-App-Image-2026-04-14-at-9-25-56-AM-1.jpg" 
+                alt="Dr. Cristiano Lázaro Fiuza" 
                 className="object-cover w-full h-full"
                 referrerPolicy="no-referrer"
               />

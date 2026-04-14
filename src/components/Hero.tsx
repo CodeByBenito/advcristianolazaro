@@ -64,7 +64,7 @@ export default function Hero() {
           >
             <div className="relative w-full aspect-[4/5] rounded-t-full overflow-hidden border-b-0 border-4 border-dark-800 shadow-2xl">
               <img 
-                src="https://picsum.photos/seed/lawyer/800/1000" 
+                src="https://i.ibb.co/KzV02QJt/Whats-App-Image-2026-04-14-at-9-25-56-AM.jpg" 
                 alt="Dr. Cristiano Lázaro Fiuza" 
                 className="object-cover w-full h-full opacity-90"
                 referrerPolicy="no-referrer"
