@@ -1,28 +1,51 @@
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MessageCircle, Lock } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contato" className="py-16 md:py-24 bg-light-50">
+    <section id="contato" className="py-20 md:py-28 bg-light-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Image */}
+
+          {/* Image — real lawyer photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative hidden md:block mb-12 lg:mb-0"
+            className="relative hidden lg:block"
           >
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://picsum.photos/seed/lawyer2/800/1000" 
-                alt="Dr. Cristiano Lázaro Fiuza" 
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-gray-300/60">
+              <img
+                src="https://i.ibb.co/CKLf7ypP/Whats-App-Image-2026-04-14-at-9-25-56-AM-1.jpg"
+                alt="Dr. Cristiano Lázaro Fiuza"
                 className="object-cover w-full h-full"
                 referrerPolicy="no-referrer"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-900/25 to-transparent"></div>
             </div>
+
+            {/* Floating "resposta rápida" card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="absolute -bottom-6 -right-6 bg-white border border-gray-200 p-5 rounded-2xl shadow-xl max-w-[220px]"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-9 h-9 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-dark-900 leading-tight">Resposta Rápida</p>
+                  <p className="text-xs text-gray-500">via WhatsApp</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 leading-snug">
+                Atendimento ágil e discreto para a sua situação.
+              </p>
+            </motion.div>
           </motion.div>
 
           {/* Form */}
@@ -31,54 +54,101 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-gray-200/50"
+            className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-gray-200/60 border border-gray-100/80"
           >
+            <p className="text-gold-600 text-xs font-semibold uppercase tracking-widest mb-3">
+              Entre em Contato
+            </p>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-900 mb-2">
               Agende sua <span className="text-gold-500">Consulta</span>
             </h2>
-            <p className="text-gray-600 mb-8">
-              Preencha o formulário abaixo e entraremos em contato o mais breve possível.
+            <p className="text-gray-500 mb-8 text-sm leading-relaxed">
+              Fale diretamente pelo WhatsApp ou preencha o formulário. Respondemos com
+              agilidade e total discrição.
             </p>
 
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* WhatsApp primary CTA */}
+            <a
+              href="https://contate.me/profcristianolazaro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 w-full py-4 mb-8 bg-green-500 hover:bg-green-400 text-white font-semibold rounded-2xl transition-all duration-300 shadow-md shadow-green-500/20 hover:-translate-y-0.5 text-sm"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Falar pelo WhatsApp Agora
+            </a>
+
+            {/* Divider */}
+            <div className="relative mb-8">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-200"></div>
+              </div>
+              <div className="relative flex justify-center">
+                <span className="bg-white px-4 text-xs text-gray-400 uppercase tracking-widest">
+                  ou envie uma mensagem
+                </span>
+              </div>
+            </div>
+
+            <form className="space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="name" className="sr-only">Nome</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    placeholder="Seu Nome" 
-                    className="w-full px-4 py-3 rounded-lg bg-light-100 border-transparent focus:border-gold-500 focus:bg-white focus:ring-0 transition-colors"
+                  <label
+                    htmlFor="name"
+                    className="block text-[11px] font-semibold text-dark-800 mb-1.5 uppercase tracking-wider"
+                  >
+                    Nome
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Seu nome completo"
+                    className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm placeholder:text-gray-400 outline-none"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="sr-only">E-mail</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    placeholder="Seu E-mail" 
-                    className="w-full px-4 py-3 rounded-lg bg-light-100 border-transparent focus:border-gold-500 focus:bg-white focus:ring-0 transition-colors"
+                  <label
+                    htmlFor="email"
+                    className="block text-[11px] font-semibold text-dark-800 mb-1.5 uppercase tracking-wider"
+                  >
+                    E-mail
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="seu@email.com"
+                    className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm placeholder:text-gray-400 outline-none"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="phone" className="sr-only">Telefone</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    placeholder="Seu Telefone / WhatsApp" 
-                    className="w-full px-4 py-3 rounded-lg bg-light-100 border-transparent focus:border-gold-500 focus:bg-white focus:ring-0 transition-colors"
+                  <label
+                    htmlFor="phone"
+                    className="block text-[11px] font-semibold text-dark-800 mb-1.5 uppercase tracking-wider"
+                  >
+                    Telefone / WhatsApp
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="(00) 00000-0000"
+                    className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm placeholder:text-gray-400 outline-none"
                   />
                 </div>
                 <div>
-                  <label htmlFor="service" className="sr-only">Área de Interesse</label>
-                  <select 
-                    id="service" 
-                    className="w-full px-4 py-3 rounded-lg bg-light-100 border-transparent focus:border-gold-500 focus:bg-white focus:ring-0 transition-colors text-gray-600"
+                  <label
+                    htmlFor="service"
+                    className="block text-[11px] font-semibold text-dark-800 mb-1.5 uppercase tracking-wider"
                   >
-                    <option value="">Área de Interesse</option>
+                    Área de Interesse
+                  </label>
+                  <select
+                    id="service"
+                    className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm text-gray-600 outline-none"
+                  >
+                    <option value="">Selecione...</option>
                     <option value="penal">Direito Penal</option>
                     <option value="administrativo">Direito Administrativo</option>
                     <option value="consultoria">Consultoria Jurídica</option>
@@ -88,25 +158,35 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="sr-only">Mensagem</label>
-                <textarea 
-                  id="message" 
-                  rows={4} 
-                  placeholder="Descreva brevemente sua situação" 
-                  className="w-full px-4 py-3 rounded-lg bg-light-100 border-transparent focus:border-gold-500 focus:bg-white focus:ring-0 transition-colors resize-none"
+                <label
+                  htmlFor="message"
+                  className="block text-[11px] font-semibold text-dark-800 mb-1.5 uppercase tracking-wider"
+                >
+                  Mensagem
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  placeholder="Descreva brevemente sua situação..."
+                  className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm placeholder:text-gray-400 resize-none outline-none"
                 ></textarea>
               </div>
 
-              <button 
-                type="button"
-                className="inline-flex items-center justify-center px-8 py-4 text-sm font-medium text-white bg-gold-500 hover:bg-gold-600 rounded-full transition-colors duration-300 shadow-lg shadow-gold-500/20 w-full md:w-auto"
-              >
-                Enviar Mensagem
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-dark-900 hover:bg-dark-800 rounded-full transition-all duration-300 shadow-lg hover:-translate-y-0.5"
+                >
+                  Enviar Mensagem
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </button>
+                <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                  <Lock className="w-3.5 h-3.5" />
+                  <span>100% Confidencial</span>
+                </div>
+              </div>
             </form>
           </motion.div>
-
         </div>
       </div>
     </section>

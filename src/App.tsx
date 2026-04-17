@@ -13,10 +13,14 @@ import Differentials from './components/Differentials';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
+import ScrollProgressBar from './components/ScrollProgressBar';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-light-50 font-sans selection:bg-gold-500/30 selection:text-dark-900">
+    <div className="min-h-screen bg-light-50 font-sans selection:bg-gold-500/30 selection:text-dark-900 overflow-x-hidden">
+      <CustomCursor />
+      <ScrollProgressBar />
       <Navbar />
       <main>
         <Hero />
