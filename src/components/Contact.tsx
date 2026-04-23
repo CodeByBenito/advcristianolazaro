@@ -19,7 +19,7 @@ export default function Contact() {
     e.preventDefault();
     
     // Substitua pelo número de WhatsApp correto (ex: 5571999999999)
-    const whatsappNumber = "5571999999999"; 
+    const whatsappNumber = "5571983105123"; 
     
     const text = `*Novo Contato via Site*%0A%0A*Nome:* ${formData.name}%0A*E-mail:* ${formData.email}%0A*Telefone:* ${formData.phone}%0A*Área de Interesse:* ${formData.service || 'Não especificada'}%0A*Mensagem:* ${formData.message}`;
     
