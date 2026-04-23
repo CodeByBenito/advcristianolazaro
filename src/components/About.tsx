@@ -3,15 +3,16 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 import RevealText from './RevealText';
 
 const stats = [
-  { value: 'Doutorando', label: 'em Direito · UFBA' },
-  { value: 'Mestre', label: 'em Direito · UCSAL' },
-  { value: 'Professor', label: 'UCSAL & Acadepol' },
+  { value: 'Doutorando', label: 'Direito Penal · UBA' },
+  { value: 'Mestre', label: 'UCSal · Políticas e Cidadania' },
+  { value: 'Professor', label: 'F. Baiana · UCSal · Acadepol' },
 ];
 
 const highlights = [
   'Atendimento personalizado e sigiloso',
   'Análise minuciosa de cada detalhe do processo',
   'Estratégias baseadas em sólida doutrina e jurisprudência',
+  'Palestrante em congressos jurídicos nacionais',
 ];
 
 export default function About() {
@@ -53,7 +54,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-gray-200/60 border border-gray-100/80"
           >
-            <p className="text-gold-600 text-xs font-semibold uppercase tracking-widest mb-3">
+            <p className="text-gold-700 text-xs font-semibold uppercase tracking-widest mb-3">
               — Advogado Criminalista
             </p>
             <RevealText as="h2" className="text-3xl md:text-4xl font-serif font-bold text-dark-900 mb-6 leading-tight">
@@ -61,17 +62,19 @@ export default function About() {
               <span className="text-gold-500">Seu Aliado Estratégico.</span>
             </RevealText>
 
-            <div className="space-y-5 text-gray-600 leading-relaxed text-sm md:text-base">
+            <div className="space-y-6 text-gray-600 leading-[1.8] md:leading-relaxed text-[15px] md:text-base">
               <p>
-                Com sólida formação acadêmica e vasta experiência prática, atuo na defesa
-                intransigente dos direitos de meus clientes. Como professor e doutorando,
-                aplico o rigor científico à prática forense, garantindo estratégias
-                inovadoras e precisas para cada caso.
+                Advogado criminalista há mais de uma década, com sólida formação acadêmica
+                e vasta experiência prática. Doutorando em Direito Penal pela Universidad
+                de Buenos Aires, mestre pela UCSal e professor em diversas instituições de
+                ponta, aplico o rigor científico à prática forense para oferecer estratégias
+                inovadoras e precisas em cada caso.
               </p>
               <p>
-                Acredito que cada cliente merece uma defesa técnica, humana e incansável.
-                Meu compromisso é com a excelência, a ética e a busca incessante pelo
-                melhor resultado possível.
+                Ex-presidente do Patronato de Presos e Egressos, ex-membro do Programa de
+                Proteção aos Defensores dos Direitos Humanos (PPDDH) e diretor do CL Centro
+                de Estudos Jurídicos. Minha atuação alia técnica, humanidade e compromisso
+                incansável com o melhor resultado para cada cliente.
               </p>
             </div>
 

@@ -5,29 +5,29 @@ import RevealText from './RevealText';
 const milestones = [
   {
     icon: GraduationCap,
-    title: 'Doutorando em Direito',
-    institution: 'UFBA',
+    title: 'Doutorando em Direito Penal',
+    institution: 'Universidad de Buenos Aires · UBA',
     description:
       'Pesquisa avançada em ciências criminais, aprofundando o conhecimento teórico para aplicação prática.',
   },
   {
     icon: Award,
-    title: 'Mestre em Direito',
-    institution: 'UCSAL',
-    description: 'Dissertação focada em garantias fundamentais e processo penal.',
+    title: 'Mestre em Políticas Sociais',
+    institution: 'UCSal',
+    description: 'Mestrado em Políticas Sociais e Cidadania com foco em garantias fundamentais.',
   },
   {
     icon: BookOpen,
     title: 'Professor',
-    institution: 'UCSAL · Difusão Múltipla · Acadepol',
-    description: 'Docência no ensino superior e na formação de agentes de segurança pública.',
+    institution: 'F. Baiana de Direito · UCSal · Acadepol',
+    description: 'Docência em pós-graduação e na formação de agentes de segurança pública, com atuação também em Estácio FIB, Unifacs e Faculdade Maurício de Nassau.',
   },
   {
     icon: Scale,
     title: 'Especialista',
-    institution: 'Direito Penal e Administrativo',
+    institution: 'Direito Penal',
     description:
-      'Atuação técnica e especializada nas áreas mais sensíveis do direito público.',
+      'Atuação técnica e especializada na área mais sensível do direito, com foco em defesa criminal de alto nível.',
   },
 ];
 

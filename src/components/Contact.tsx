@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, MessageCircle, Lock } from 'lucide-react';
+import { ArrowRight, MessageCircle, Lock, MapPin } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -46,6 +46,29 @@ export default function Contact() {
                 Atendimento ágil e discreto para a sua situação.
               </p>
             </motion.div>
+
+            {/* Floating "endereço" card */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="absolute -top-6 -left-6 bg-white border border-gray-200 p-5 rounded-2xl shadow-xl max-w-[240px]"
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-9 h-9 rounded-full bg-gold-400 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-4 h-4 text-dark-900" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-dark-900 leading-tight">Escritório</p>
+                  <p className="text-xs text-gray-500">Salvador / BA</p>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 leading-snug">
+                Av. ACM, Ed. Base Empresarial<br />
+                Sala 204, Pituba — CEP 41800-700
+              </p>
+            </motion.div>
           </motion.div>
 
           {/* Form */}
@@ -56,7 +79,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-gray-200/60 border border-gray-100/80"
           >
-            <p className="text-gold-600 text-xs font-semibold uppercase tracking-widest mb-3">
+            <p className="text-gold-700 text-xs font-semibold uppercase tracking-widest mb-3">
               Entre em Contato
             </p>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-900 mb-2">
@@ -149,9 +172,9 @@ export default function Contact() {
                     className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm text-gray-600 outline-none"
                   >
                     <option value="">Selecione...</option>
-                    <option value="penal">Direito Penal</option>
-                    <option value="administrativo">Direito Administrativo</option>
-                    <option value="consultoria">Consultoria Jurídica</option>
+                    <option value="defesa-criminal">Defesa Criminal</option>
+                    <option value="tribunal-juri">Tribunal do Júri</option>
+                    <option value="habeas-corpus">Habeas Corpus</option>
                     <option value="outro">Outro</option>
                   </select>
                 </div>

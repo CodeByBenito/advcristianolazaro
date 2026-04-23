@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from 'lucide-react';
 
 const quickLinks = [
   { name: 'Sobre Mim', href: '#sobre' },
@@ -6,6 +6,29 @@ const quickLinks = [
   { name: 'Trajetória', href: '#trajetoria' },
   { name: 'Casos de Sucesso', href: '#casos' },
   { name: 'Contato', href: '#contato' },
+];
+
+const socials = [
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/adv.cristianolazaro/',
+    Icon: Instagram,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/cristiano-l%C3%A1zaro-fiuza-figueiredo-9b5b5528/',
+    Icon: Linkedin,
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/cristiano.fiuzaadvogado/',
+    Icon: Facebook,
+  },
+  {
+    name: 'YouTube',
+    href: 'https://www.youtube.com/channel/UCJ51GcLhgAnk5Uu2bVn6msA',
+    Icon: Youtube,
+  },
 ];
 
 export default function Footer() {
@@ -46,7 +69,7 @@ export default function Footer() {
               href="#"
               className="text-2xl font-serif font-bold text-white tracking-wider block mb-4"
             >
-              Cristiano<span className="text-gold-400">.</span>
+              Cristiano Lázaro<span className="text-gold-400">.</span>
             </a>
             <p className="text-gray-400 max-w-sm leading-relaxed mb-1.5 text-sm">
               Advocacia criminal estratégica e especializada, pautada na ética, no rigor
@@ -54,20 +77,18 @@ export default function Footer() {
             </p>
             <p className="text-gray-600 text-xs mb-8">OAB/BA — Advogado Criminalista</p>
             <div className="flex gap-3">
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="w-10 h-10 rounded-full bg-dark-700 border border-gray-700 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:border-gold-400/30 transition-all"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="w-10 h-10 rounded-full bg-dark-700 border border-gray-700 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:border-gold-400/30 transition-all"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
+              {socials.map(({ name, href, Icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="w-10 h-10 rounded-full bg-dark-700 border border-gray-700 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:border-gold-400/30 transition-all"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -92,9 +113,14 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400 text-sm leading-snug">
-                  WhatsApp disponível via botão acima
-                </span>
+                <a
+                  href="https://contate.me/profcristianolazaro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 text-sm leading-snug hover:text-gold-400 transition-colors"
+                >
+                  WhatsApp — Fale agora
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
@@ -104,7 +130,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400 text-sm">Salvador, BA — Brasil</span>
+                <span className="text-gray-400 text-sm leading-snug">
+                  Av. ACM, Ed. Base Empresarial<br />
+                  Sala 204, Pituba — Salvador/BA<br />
+                  CEP 41800-700
+                </span>
               </li>
             </ul>
           </div>

@@ -1,35 +1,14 @@
 import { motion } from 'motion/react';
-import { Scale, Building2, Shield, Briefcase } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import RevealText from './RevealText';
 
 const areas = [
   {
-    icon: Scale,
-    number: '01',
-    title: 'Direito Penal',
-    description:
-      'Defesa técnica em inquéritos e processos criminais, garantindo o respeito ao devido processo legal e aos direitos fundamentais.',
-  },
-  {
-    icon: Building2,
-    number: '02',
-    title: 'Direito Administrativo',
-    description:
-      'Atuação em processos administrativos disciplinares, improbidade administrativa e defesa de servidores públicos.',
-  },
-  {
     icon: Shield,
-    number: '03',
-    title: 'Defesa Criminal Estratégica',
+    number: '01',
+    title: 'Defesa Criminal',
     description:
-      'Planejamento e execução de defesas complexas, com foco em resultados e mitigação de danos.',
-  },
-  {
-    icon: Briefcase,
-    number: '04',
-    title: 'Consultoria Jurídica',
-    description:
-      'Orientação preventiva para empresas e pessoas físicas, evitando litígios e passivos criminais.',
+      'Defesa técnica em inquéritos e processos criminais, com planejamento e execução de estratégias complexas. Foco em resultados, mitigação de danos, respeito ao devido processo legal e proteção máxima dos direitos fundamentais do cliente.',
   },
 ];
 
@@ -38,15 +17,15 @@ export default function Expertise() {
     <section id="atuacao" className="py-20 md:py-28 bg-light-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-gold-600 text-xs font-semibold uppercase tracking-widest mb-3">
+          <p className="text-gold-700 text-xs font-semibold uppercase tracking-widest mb-3">
             Especialidades
           </p>
           <RevealText as="h2" className="text-4xl md:text-5xl font-serif font-bold text-dark-900 mb-4">
             Minhas Áreas de <span className="text-gold-500">Atuação</span>
           </RevealText>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Foco em áreas estratégicas para oferecer a melhor defesa e consultoria jurídica,
-            aliando conhecimento acadêmico e prática forense.
+            Atuação concentrada e especializada em defesa criminal, aliando conhecimento
+            acadêmico e prática forense para oferecer a melhor estratégia jurídica.
           </p>
         </div>
 
@@ -76,7 +55,7 @@ export default function Expertise() {
 
                 {/* Title */}
                 <div className="md:w-[220px] flex-shrink-0">
-                  <h3 className="text-xl font-serif font-semibold text-dark-900 group-hover:text-gold-600 transition-colors">
+                  <h3 className="text-xl font-serif font-semibold text-dark-900 group-hover:text-gold-700 transition-colors">
                     {area.title}
                   </h3>
                 </div>
