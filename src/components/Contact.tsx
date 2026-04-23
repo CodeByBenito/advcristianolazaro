@@ -1,7 +1,33 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, MessageCircle, Lock, MapPin } from 'lucide-react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Substitua pelo número de WhatsApp correto (ex: 5571999999999)
+    const whatsappNumber = "5571999999999"; 
+    
+    const text = `*Novo Contato via Site*%0A%0A*Nome:* ${formData.name}%0A*E-mail:* ${formData.email}%0A*Telefone:* ${formData.phone}%0A*Área de Interesse:* ${formData.service || 'Não especificada'}%0A*Mensagem:* ${formData.message}`;
+    
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="contato" className="py-20 md:py-28 bg-light-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,7 +139,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <form className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label
@@ -125,6 +151,9 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="Seu nome completo"
                     className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm placeholder:text-gray-400 outline-none"
                   />
@@ -139,6 +168,9 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="seu@email.com"
                     className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm placeholder:text-gray-400 outline-none"
                   />
@@ -156,6 +188,9 @@ export default function Contact() {
                   <input
                     type="tel"
                     id="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
                     placeholder="(00) 00000-0000"
                     className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm placeholder:text-gray-400 outline-none"
                   />
@@ -169,6 +204,9 @@ export default function Contact() {
                   </label>
                   <select
                     id="service"
+                    required
+                    value={formData.service}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm text-gray-600 outline-none"
                   >
                     <option value="">Selecione...</option>
@@ -189,6 +227,9 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={4}
                   placeholder="Descreva brevemente sua situação..."
                   className="w-full px-4 py-3 rounded-xl bg-light-100 border border-transparent focus:border-gold-400 focus:bg-white transition-all text-sm placeholder:text-gray-400 resize-none outline-none"
@@ -197,7 +238,7 @@ export default function Contact() {
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <button
-                  type="button"
+                  type="submit"
                   className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-dark-900 hover:bg-dark-800 rounded-full transition-all duration-300 shadow-lg hover:-translate-y-0.5"
                 >
                   Enviar Mensagem
