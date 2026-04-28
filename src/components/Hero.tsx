@@ -10,7 +10,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-24 md:pt-28 md:pb-32 bg-dark-900 overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-center pt-24 pb-24 md:pt-28 md:pb-32 bg-dark-900 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#1a2033_0%,_#080d14_65%)]"></div>
 

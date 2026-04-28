@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Play, Quote, Headphones, Scale, Gavel, BookOpen } from 'lucide-react';
+import { Headphones, Scale, Gavel, BookOpen } from 'lucide-react';
 import { useState } from 'react';
 import RevealText from './RevealText';
 
@@ -28,26 +28,32 @@ const prints = [
   {
     outlet: 'Terra',
     caption: 'Análise do PL da Dosimetria e seus efeitos sobre condenações por crimes graves',
+    image: '/images/repercussao/dosimetria.png',
   },
   {
     outlet: 'Terra',
     caption: 'Prisão domiciliar humanitária temporária: por que especialistas rebatem a tese',
+    image: '/images/repercussao/prisao.png',
   },
   {
     outlet: 'Mídia Jurídica',
     caption: 'Crítica técnica ao alcance ampliado do PL da Dosimetria',
+    image: '/images/repercussao/critica.png',
   },
   {
     outlet: 'Imprensa Nacional',
     caption: 'Comentários sobre dosimetria penal e o caso de repercussão nacional',
+    image: '/images/repercussao/imprensa.png',
   },
   {
     outlet: 'Entrevistas',
     caption: 'Participação em debates sobre reformas no sistema penal brasileiro',
+    image: '/images/repercussao/entrevistas.png',
   },
   {
     outlet: 'Repercussão',
     caption: 'Análise técnica de decisões e teses de grande impacto social',
+    image: '/images/repercussao/analise.png',
   },
 ];
 
@@ -182,13 +188,14 @@ export default function Cases() {
                     whileHover={{ y: -4, transition: { duration: 0.2 } }}
                     className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:shadow-gray-200/70 hover:border-gold-400/30 transition-all duration-300 cursor-pointer"
                   >
-                    {/* Placeholder thumbnail */}
-                    <div className="aspect-square bg-gradient-to-br from-dark-800 to-dark-900 relative flex items-center justify-center overflow-hidden">
-                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#1a2033_0%,_#080d14_80%)]" />
-                      <Quote className="w-10 h-10 text-gold-400/15 relative" />
-
-                      {/* Gold corner accent */}
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-gold-400/10 to-transparent" />
+                    {/* Thumbnail image */}
+                    <div className="aspect-square relative overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.caption}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-dark-900/40 to-transparent" />
 
                       {/* Outlet badge */}
                       <div className="absolute top-3 left-3 bg-dark-900/80 backdrop-blur-sm border border-gold-400/20 px-2.5 py-1 rounded-full">
@@ -196,16 +203,6 @@ export default function Cases() {
                           {item.outlet}
                         </span>
                       </div>
-
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        className="absolute inset-0 bg-gold-400/8 flex items-center justify-center"
-                      >
-                        <span className="text-white text-xs font-medium bg-dark-900/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-gold-400/20">
-                          Adicionar print
-                        </span>
-                      </motion.div>
                     </div>
 
                     <div className="p-4">
@@ -220,9 +217,7 @@ export default function Cases() {
                 ))}
               </div>
 
-              <p className="text-center text-gray-400 text-xs mt-8">
-                Substitua os placeholders com os prints reais das matérias e publicações
-              </p>
+
             </motion.div>
           )}
 
@@ -234,69 +229,77 @@ export default function Cases() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.4 }}
-              className="max-w-3xl mx-auto"
+              className="max-w-4xl mx-auto"
             >
-              <div className="group relative bg-dark-900 rounded-3xl overflow-hidden shadow-2xl shadow-dark-900/50 cursor-pointer">
-                <div className="aspect-video bg-gradient-to-br from-dark-800 to-dark-900 relative">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#151d2e_0%,_#080d14_80%)]" />
+              {/* Header above the player */}
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 mb-3 px-3 py-1 bg-gold-400/10 border border-gold-400/20 rounded-full">
+                  <Gavel className="w-3.5 h-3.5 text-gold-500" />
+                  <span className="text-gold-700 text-[11px] font-semibold uppercase tracking-widest">
+                    Tribunal
+                  </span>
+                </div>
+                <h3 className="font-serif font-bold text-2xl md:text-3xl text-dark-900 mb-2">
+                  Sustentação Oral
+                </h3>
+                <p className="text-gray-600 text-sm max-w-xl mx-auto leading-relaxed">
+                  Atuação técnica e combativa nos tribunais, com domínio da oratória jurídica
+                  e defesa estratégica de alto impacto.
+                </p>
+              </div>
 
-                  {/* Decorative diagonal stripes */}
-                  <div
-                    className="absolute inset-0 opacity-[0.03]"
-                    style={{
-                      backgroundImage: `repeating-linear-gradient(-45deg,#d4af37 0px,#d4af37 1px,transparent 1px,transparent 60px)`,
-                    }}
+              {/* YouTube embed */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-dark-900/30 border border-dark-900/5 bg-dark-900">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/TfBbET-Qq7o"
+                    title="Sustentação Oral — Cristiano Lázaro"
+                    className="w-full h-full"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
                   />
-
-                  {/* Centered play button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative">
-                      <motion.div
-                        className="absolute -inset-6 rounded-full bg-gold-400/15"
-                        animate={{ scale: [1, 1.55, 1], opacity: [0.7, 0, 0.7] }}
-                        transition={{ duration: 2.2, repeat: Infinity }}
-                      />
-                      <motion.div
-                        className="absolute -inset-6 rounded-full bg-gold-400/8"
-                        animate={{ scale: [1, 2.1, 1], opacity: [0.5, 0, 0.5] }}
-                        transition={{ duration: 2.2, repeat: Infinity, delay: 0.35 }}
-                      />
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ type: 'spring', stiffness: 300 }}
-                        className="relative w-20 h-20 bg-gold-400 rounded-full flex items-center justify-center shadow-2xl shadow-gold-400/40"
-                      >
-                        <Play className="w-8 h-8 text-dark-900 ml-1" fill="currentColor" />
-                      </motion.div>
-                    </div>
-                  </div>
-
-                  {/* Bottom overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent p-8">
-                    <p className="text-gold-400 text-xs font-semibold uppercase tracking-widest mb-2">
-                      Sustentação Oral
-                    </p>
-                    <p className="text-white font-serif font-bold text-xl leading-tight">
-                      Atuação nos Tribunais
-                    </p>
-                    <p className="text-gray-400 text-sm mt-1">
-                      Adicione o link do vídeo para ativar o player
-                    </p>
-                  </div>
-
-                  {/* Top-right badge */}
-                  <div className="absolute top-5 right-5 bg-dark-900/80 backdrop-blur-sm border border-gold-400/20 px-3 py-1.5 rounded-full">
-                    <span className="text-gold-400 text-xs font-semibold uppercase tracking-wider">
-                      Tribunal
-                    </span>
-                  </div>
                 </div>
               </div>
 
-              <p className="text-center text-gray-500 text-sm mt-6 leading-relaxed">
-                Atuação técnica e combativa nos tribunais, com domínio da oratória jurídica
-                e defesa estratégica de alto impacto.
-              </p>
+              {/* Topics below the player */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                {[
+                  {
+                    icon: Gavel,
+                    title: 'Defesa nos Tribunais',
+                    description: 'Sustentação oral estratégica perante os Tribunais de Justiça e Tribunais Superiores.',
+                  },
+                  {
+                    icon: Scale,
+                    title: 'Oratória Jurídica',
+                    description: 'Comunicação persuasiva e técnica refinada na defesa dos interesses do cliente.',
+                  },
+                  {
+                    icon: BookOpen,
+                    title: 'Teses de Impacto',
+                    description: 'Construção de teses sólidas e argumentação de alto nível em plenário.',
+                  },
+                ].map((topic, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
+                    className="group bg-white rounded-2xl p-5 border border-gray-100 hover:border-gold-400/30 hover:shadow-lg hover:shadow-gray-200/60 transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gold-400/10 group-hover:bg-gold-400 flex items-center justify-center mb-3 transition-colors duration-300">
+                      <topic.icon className="w-5 h-5 text-gold-500 group-hover:text-dark-900 transition-colors" />
+                    </div>
+                    <p className="font-serif font-bold text-dark-900 text-sm mb-1.5">
+                      {topic.title}
+                    </p>
+                    <p className="text-gray-500 text-xs leading-relaxed">
+                      {topic.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           )}
 

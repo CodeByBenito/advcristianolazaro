@@ -77,10 +77,10 @@ export default function Authority() {
                   <h3 className="text-lg font-serif font-bold mb-1.5 text-white">
                     {milestone.title}
                   </h3>
-                  <p className="text-gold-400 text-xs font-medium mb-4 uppercase tracking-wider">
+                  <p className="text-gold-400 text-[13px] md:text-xs font-medium mb-4 uppercase tracking-wider">
                     {milestone.institution}
                   </p>
-                  <p className="text-gray-400 text-sm leading-relaxed">{milestone.description}</p>
+                  <p className="text-gray-400 text-[15px] md:text-sm leading-[1.75] md:leading-relaxed">{milestone.description}</p>
                 </div>
               </motion.div>
             );

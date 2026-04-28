@@ -32,7 +32,7 @@ const differentials = [
 
 export default function Differentials() {
   return (
-    <section className="py-20 md:py-28 bg-dark-900 bg-noise text-white relative overflow-hidden">
+    <section id="diferenciais" className="py-20 md:py-28 bg-dark-900 bg-noise text-white relative overflow-hidden">
       {/* CSS dot pattern background */}
       <div
         className="absolute inset-0 opacity-[0.035]"

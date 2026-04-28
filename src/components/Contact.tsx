@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, MessageCircle, Lock, MapPin } from 'lucide-react';
 
@@ -11,11 +11,11 @@ export default function Contact() {
     message: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     
     // Substitua pelo número de WhatsApp correto (ex: 5571999999999)
@@ -43,9 +43,9 @@ export default function Contact() {
           >
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-gray-300/60">
               <img
-                src="https://i.ibb.co/CKLf7ypP/Whats-App-Image-2026-04-14-at-9-25-56-AM-1.jpg"
+                src="https://i.ibb.co/ZznCLp5y/e85f89fd-4689-413a-bc24-6ff8ae1b6ac4.jpg"
                 alt="Dr. Cristiano Lázaro Fiuza"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full object-top"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-900/25 to-transparent"></div>

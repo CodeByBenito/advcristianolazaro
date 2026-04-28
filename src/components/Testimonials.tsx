@@ -41,7 +41,7 @@ export default function Testimonials() {
   const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-20 md:py-28 bg-dark-900 border-t border-white/5 relative">
+    <section id="depoimentos" className="py-20 md:py-28 bg-dark-900 border-t border-white/5 relative">
       {/* Decorative background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gold-400/5 rounded-full blur-[120px] pointer-events-none"></div>
 
