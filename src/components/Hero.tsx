@@ -81,7 +81,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-dark-900 bg-gold-400 hover:bg-gold-300 rounded-full transition-all duration-300 shadow-lg shadow-gold-400/25 hover:shadow-gold-400/40 hover:-translate-y-0.5"
               >
-                Consulta Gratuita via WhatsApp
+              Fale com um Especialista
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a
