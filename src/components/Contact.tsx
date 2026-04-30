@@ -112,32 +112,9 @@ export default function Contact() {
               Agende sua <span className="text-gold-500">Consulta</span>
             </h2>
             <p className="text-gray-500 mb-8 text-sm leading-relaxed">
-              Fale diretamente pelo WhatsApp ou preencha o formulário. Respondemos com
-              agilidade e total discrição.
+              Preencha o formulário abaixo com os detalhes da sua situação. Em seguida,
+              você será direcionado para o nosso WhatsApp com os dados preenchidos.
             </p>
-
-            {/* WhatsApp primary CTA */}
-            <a
-              href="https://contate.me/profcristianolazaro"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full py-4 mb-8 bg-green-500 hover:bg-green-400 text-white font-semibold rounded-2xl transition-all duration-300 shadow-md shadow-green-500/20 hover:-translate-y-0.5 text-sm"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Falar pelo WhatsApp Agora
-            </a>
-
-            {/* Divider */}
-            <div className="relative mb-8">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-200"></div>
-              </div>
-              <div className="relative flex justify-center">
-                <span className="bg-white px-4 text-xs text-gray-400 uppercase tracking-widest">
-                  ou envie uma mensagem
-                </span>
-              </div>
-            </div>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -239,10 +216,10 @@ export default function Contact() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-dark-900 hover:bg-dark-800 rounded-full transition-all duration-300 shadow-lg hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-green-500 hover:bg-green-400 rounded-full transition-all duration-300 shadow-lg shadow-green-500/20 hover:-translate-y-0.5"
                 >
-                  Enviar Mensagem
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  Enviar pelo WhatsApp
                 </button>
                 <div className="flex items-center gap-1.5 text-xs text-gray-400">
                   <Lock className="w-3.5 h-3.5" />
